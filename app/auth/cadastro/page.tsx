@@ -212,7 +212,7 @@ export default function CadastroPage() {
           <p className="mt-8 text-center text-[#6A7487]">
             Já tem uma conta?{" "}
             <Link
-              href="auth/login"
+              href="/auth/login"
               className="font-semibold text-[#152E88] hover:underline"
             >
               Fazer login
