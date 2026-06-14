@@ -166,7 +166,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-screen shrink-0 flex-col justify-between overflow-hidden bg-secondary py-5 text-white transition-[width,padding] duration-300 ${
+      className={`sticky top-0 flex h-screen shrink-0 flex-col justify-between overflow-y-auto bg-secondary py-5 text-white transition-[width,padding] duration-300 ${
         isExpanded ? "w-[240px] px-5 lg:py-7" : "w-[78px] px-2 lg:py-5"
       }`}
     >
