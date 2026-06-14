@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PerformanceChartCard } from "../../_components/performance-chart-card";
 import { SidebarToggleButton } from "../../_components/sidebar-toggle-button";
 
@@ -22,6 +23,7 @@ type QuickAction = {
   description: string;
   cta: string;
   accent: string;
+  href: string;
   icon: "sheet" | "book" | "alert" | "bot";
 };
 
@@ -76,6 +78,7 @@ const quickActions: QuickAction[] = [
     description: "Simule a prova oficial e teste seus conhecimentos.",
     cta: "Iniciar",
     accent: "#0b57a4",
+    href: "/dashboard/simulados",
     icon: "sheet",
   },
   {
@@ -83,6 +86,7 @@ const quickActions: QuickAction[] = [
     description: "Estude assuntos específicos e teste seus pontos fortes.",
     cta: "Estudar",
     accent: "#22c55e",
+    href: "/dashboard/pratica-por-tema",
     icon: "book",
   },
   {
@@ -90,6 +94,7 @@ const quickActions: QuickAction[] = [
     description: "Revise as questões que você errou e avance com clareza.",
     cta: "Revisar",
     accent: "#991b1b",
+    href: "/dashboard/revisar-erros",
     icon: "alert",
   },
   {
@@ -97,6 +102,7 @@ const quickActions: QuickAction[] = [
     description: "Tire dúvidas e receba explicações com IA CNH.",
     cta: "Conversar",
     accent: "#eab308",
+    href: "/dashboard/tutor-inteligente",
     icon: "bot",
   },
 ];
@@ -288,12 +294,9 @@ function QuickActionCard({ action }: { action: QuickAction }) {
       </div>
       <h3 className="mt-4 text-base font-black text-gray-800">{action.title}</h3>
       <p className="mt-1.5 flex-1 text-xs font-medium leading-relaxed text-gray-400">{action.description}</p>
-      <button
-        className="mt-4 rounded-xl px-4 py-2 text-xs font-black text-white shadow-sm transition-opacity hover:opacity-90"
-        style={{ backgroundColor: action.accent }}
-      >
+      <Link href={action.href} className="mt-4 rounded-xl px-4 py-2 text-center text-xs font-black text-white shadow-sm transition-opacity hover:opacity-90" style={{ backgroundColor: action.accent }}>
         {action.cta}
-      </button>
+      </Link>
     </article>
   );
 }
@@ -347,7 +350,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 self-start rounded-xl bg-white px-4 py-2 border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+        <Link href="/dashboard/perfil" className="flex items-center gap-3 self-start rounded-xl bg-white px-4 py-2 border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.02)] hover:bg-gray-50 transition">
           <div className="text-right">
             <p className="text-sm font-black text-gray-800">Josué Medino</p>
             <p className="text-xs font-bold text-gray-400">Nível Básico</p>
@@ -355,7 +358,7 @@ export default function HomePage() {
           <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-gray-100 bg-gray-200 shadow-inner flex items-center justify-center font-black text-gray-500 text-xs">
             JM
           </div>
-        </div>
+        </Link>
       </header>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
