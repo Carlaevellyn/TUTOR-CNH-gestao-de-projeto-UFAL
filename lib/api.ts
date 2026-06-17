@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "http://136.248.117.53:5000";
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "https://cnhapi.duckdns.org";
 
 export type Usuario = {
   id: number;
