@@ -8,10 +8,10 @@ import { UserPill } from "../../_components/user-pill";
 import { api, type ChatHistoryItem } from "@/lib/api";
 
 const suggestions = [
-  "Quais sao as infracoes gravissimas?",
+  "Quais são as infrações gravíssimas?",
   "Explique a diferenca entre multa e advertencia",
   "Como funciona a pontuacao da CNH?",
-  "Quais exames sao necessarios para tirar a CNH?",
+  "Quais exames são necessários para tirar a CNH?",
 ];
 
 type Message = ChatHistoryItem;
@@ -30,7 +30,7 @@ export default function TutorInteligentePage() {
     {
       role: "model",
       content:
-        "Ola! Me envie uma duvida sobre legislacao, sinalizacao, direcao defensiva ou prova teorica da CNH.",
+        "Olá! Me envie uma dúvida sobre legislação, sinalização, direção defensiva ou prova teórica da CNH.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -59,7 +59,7 @@ export default function TutorInteligentePage() {
       );
       setMessages([...nextMessages, { role: "model", content: data.resposta }]);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel enviar sua pergunta.");
+      setError(err instanceof Error ? err.message : "Não foi possível enviar sua pergunta.");
       setMessages(messages);
     } finally {
       setIsSending(false);
@@ -76,7 +76,7 @@ export default function TutorInteligentePage() {
               Tutor inteligente
             </h1>
             <p className="mt-1 text-sm text-[#5f6d84]">
-              Converse e tire duvidas com o tutor de CNH.
+              Converse e tire dúvidas com o tutor de CNH.
             </p>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function TutorInteligentePage() {
 
         <aside className="space-y-5">
           <article className="rounded-[24px] bg-[#f2f2f3] p-4 shadow-[0_12px_24px_rgba(19,32,58,0.08)]">
-            <h2 className="text-2xl font-extrabold text-[#1f2435]">Sugestao para voce</h2>
+            <h2 className="text-2xl font-extrabold text-[#1f2435]">Sugestão para você</h2>
             <div className="mt-4 space-y-3">
               {suggestions.map((suggestion) => (
                 <button
@@ -174,7 +174,7 @@ export default function TutorInteligentePage() {
           <article className="rounded-[24px] border border-[#cad6f6] bg-[#eef3ff] p-5">
             <h2 className="text-xl font-extrabold text-[#3457b9]">Contexto conectado</h2>
             <p className="mt-2 text-sm leading-6 text-[#34405a]">
-              As mensagens sao enviadas para o backend Flask e podem ser registradas no
+              As mensagens são enviadas para o backend Flask e podem ser registradas no
               historico do usuario autenticado.
             </p>
           </article>

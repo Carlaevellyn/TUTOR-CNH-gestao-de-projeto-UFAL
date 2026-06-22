@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useAuth } from "./auth-provider";
 
 function getInitials(name?: string | null) {
@@ -16,14 +17,18 @@ export function UserPill() {
   const name = usuario?.nome ?? "Aluno Tutor CNH";
 
   return (
-    <div className="flex items-center gap-3 self-start rounded-full bg-white px-3 py-2 shadow-[0_10px_24px_rgba(19,32,58,0.08)]">
+    <Link
+      href="/dashboard/perfil"
+      className="flex items-center gap-3 self-start rounded-full bg-white px-3 py-2 shadow-[0_10px_24px_rgba(19,32,58,0.08)] transition hover:bg-[#f7f9ff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      aria-label="Abrir perfil"
+    >
       <div className="text-right">
         <p className="text-sm font-semibold text-foreground">{name}</p>
-        <p className="text-xs text-text-muted">Nivel Basico</p>
+        <p className="text-xs text-text-muted">Nível Básico</p>
       </div>
       <div className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-slate-800 to-slate-500 text-sm font-black text-white">
         {getInitials(name)}
       </div>
-    </div>
+    </Link>
   );
 }

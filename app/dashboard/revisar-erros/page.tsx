@@ -9,7 +9,7 @@ import { api, type RespostaQuestao } from "@/lib/api";
 
 function formatDate(value?: string | null) {
   if (!value) {
-    return "Data nao registrada";
+    return "Data não registrada";
   }
 
   return new Intl.DateTimeFormat("pt-BR").format(new Date(value));
@@ -59,9 +59,9 @@ function MissedQuestionCard({
       </div>
       <div className="min-w-0">
         <p className="truncate text-sm font-extrabold text-[#232737]">
-          {item.area ?? "Tema nao informado"}
+          {item.area ?? "Tema não informado"}
         </p>
-        <p className="text-sm font-semibold text-[#2f436e]">Questao #{item.questao_id}</p>
+        <p className="text-sm font-semibold text-[#2f436e]">Questão #{item.questao_id}</p>
         <p className="text-xs text-[#718099]">Errada em {formatDate(item.respondida_em)}</p>
       </div>
     </button>
@@ -96,7 +96,7 @@ export default function RevisarErrosPage() {
       })
       .catch((err) => {
         if (mounted) {
-          setError(err instanceof Error ? err.message : "Nao foi possivel carregar os erros.");
+          setError(err instanceof Error ? err.message : "Não foi possível carregar os erros.");
         }
       })
       .finally(() => {
@@ -122,7 +122,7 @@ export default function RevisarErrosPage() {
   );
 
   return (
-    <section className="flex min-h-screen flex-1 flex-col bg-[#f7f8fc] px-4 py-5 sm:px-6 lg:px-8 lg:py-7">
+    <section className="flex flex-1 flex-col bg-[#f7f8fc] px-4 py-5 sm:px-6 lg:px-8 lg:py-7 overflow-y-auto">
       <header className="flex flex-col gap-4 pb-4 xl:flex-row xl:items-start xl:justify-between">
         <div className="flex items-start gap-3">
           <SidebarToggleButton />
@@ -165,7 +165,7 @@ export default function RevisarErrosPage() {
             Nenhum erro para revisar
           </h2>
           <p className="mt-2 text-sm text-[#647389]">
-            Quando voce errar uma questao em simulados ou praticas, ela aparecera aqui.
+            Quando você errar uma questão em simulados ou práticas, ela aparecerá aqui.
           </p>
         </article>
       ) : (
@@ -174,14 +174,14 @@ export default function RevisarErrosPage() {
             <MetricCard value={`${total}`} label="Erros para revisar" accent="#dc6b56" />
             <MetricCard value={`${temas}`} label="Temas para revisar" accent="#df9349" />
             <MetricCard value={`${estimatedMinutes}min`} label="Tempo estimado" accent="#5bcfd1" />
-            <MetricCard value={`${selectedIndex + 1}/${items.length}`} label="Progresso da revisao" accent="#59c66f" />
+            <MetricCard value={`${selectedIndex + 1}/${items.length}`} label="Progresso da revisão" accent="#59c66f" />
           </div>
 
-          <div className="mt-4 grid gap-0 overflow-hidden rounded-[22px] border border-[#cfd9ea] bg-white shadow-[0_12px_24px_rgba(19,32,58,0.08)] 2xl:grid-cols-[320px_minmax(0,1fr)]">
+          <div className="mt-4 grid gap-0 rounded-[22px] border border-[#cfd9ea] bg-white shadow-[0_12px_24px_rgba(19,32,58,0.08)] 2xl:grid-cols-[320px_minmax(0,1fr)]">
             <aside className="border-b border-[#e8edf6] p-4 2xl:border-b-0 2xl:border-r">
               <div className="mb-4">
                 <h2 className="text-lg font-extrabold text-[#202637]">
-                  Suas questoes erradas ({items.length})
+                  Suas questões erradas ({items.length})
                 </h2>
               </div>
 
@@ -201,10 +201,10 @@ export default function RevisarErrosPage() {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <span className="rounded-md bg-[#d7ecff] px-3 py-1 text-xs font-bold text-[#3173a7]">
-                    Questao {selectedIndex + 1} de {items.length}
+                    Questão {selectedIndex + 1} de {items.length}
                   </span>
                   <p className="mt-2 text-sm font-bold text-[#28608b]">
-                    {selected.area ?? "Tema nao informado"}
+                    {selected.area ?? "Tema não informado"}
                   </p>
                 </div>
                 <span className="rounded-full bg-[#ff7d7d] px-3 py-1 text-xs font-bold text-white">
@@ -213,13 +213,13 @@ export default function RevisarErrosPage() {
               </div>
 
               <p className="mt-4 text-xl font-bold leading-8 text-[#1f2435]">
-                {selected.pergunta ?? "Questao sem enunciado registrado."}
+                {selected.pergunta ?? "Questão sem enunciado registrado."}
               </p>
 
               {selected.imagem_url ? (
                 <img
                   src={selected.imagem_url}
-                  alt="Imagem da questao"
+                  alt="Imagem da questão"
                   className="mx-auto mt-5 max-h-64 rounded-xl object-contain"
                 />
               ) : null}
@@ -255,7 +255,7 @@ export default function RevisarErrosPage() {
                     Resposta correta
                   </p>
                   <p className="mt-2 font-extrabold text-[#21592b]">
-                    {selected.resposta_correta} - {correctAlternative?.texto ?? "Nao registrada"}
+                    {selected.resposta_correta} - {correctAlternative?.texto ?? "Não registrada"}
                   </p>
                 </div>
 
@@ -264,7 +264,7 @@ export default function RevisarErrosPage() {
                     Sua resposta
                   </p>
                   <p className="mt-2 font-extrabold text-[#7a3941]">
-                    {selected.alternativa_marcada} - {markedAlternative?.texto ?? "Nao registrada"}
+                    {selected.alternativa_marcada} - {markedAlternative?.texto ?? "Não registrada"}
                   </p>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function RevisarErrosPage() {
               {selected.explicacao ? (
                 <div className="mt-4 rounded-[18px] border border-[#cad6f6] bg-[#eef3ff] px-3 py-3">
                   <p className="text-sm font-extrabold text-[#3457b9]">
-                    Explicacao do Tutor Inteligente
+                    Explicação do Tutor Inteligente
                   </p>
                   <p className="mt-1 text-sm leading-5 text-[#34405a]">{selected.explicacao}</p>
                 </div>
@@ -293,7 +293,7 @@ export default function RevisarErrosPage() {
                   disabled={selectedIndex === items.length - 1}
                   className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_18px_rgba(42,103,215,0.28)] transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  Proxima questao
+                  Próxima questão
                 </button>
               </div>
             </article>

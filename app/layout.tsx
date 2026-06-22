@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tutor CNH",
-  description: "Plataforma de estudo para a prova teorica da CNH",
+  description: "Plataforma de estudo para a prova teórica da CNH",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen bg-background font-sans text-foreground">
+      <body className="h-dvh bg-background font-sans text-foreground">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

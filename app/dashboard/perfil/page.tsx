@@ -10,7 +10,7 @@ import { api, type Usuario } from "@/lib/api";
 
 function formatBirthDate(value?: string | null) {
   if (!value) {
-    return "Nao informada";
+    return "Não informada";
   }
 
   return new Intl.DateTimeFormat("pt-BR", { timeZone: "UTC" }).format(new Date(value));
@@ -57,7 +57,7 @@ export default function PerfilPage() {
       })
       .catch((err) => {
         if (mounted) {
-          setError(err instanceof Error ? err.message : "Nao foi possivel carregar o perfil.");
+          setError(err instanceof Error ? err.message : "Não foi possível carregar o perfil.");
         }
       })
       .finally(() => {
@@ -87,7 +87,7 @@ export default function PerfilPage() {
       atualizarUsuario(data.usuario);
       setSuccess("Perfil atualizado com sucesso.");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel atualizar o perfil.");
+      setError(err instanceof Error ? err.message : "Não foi possível atualizar o perfil.");
     } finally {
       setIsSaving(false);
     }
@@ -101,7 +101,7 @@ export default function PerfilPage() {
           <div>
             <h1 className="text-4xl font-bold text-[#0C5DA8] sm:text-5xl">Meu Perfil</h1>
             <p className="mt-2 text-gray-700">
-              Gerencie as informacoes da sua conta salvas na API.
+              Gerencie as informações da sua conta salvas na API.
             </p>
           </div>
         </div>
@@ -137,15 +137,15 @@ export default function PerfilPage() {
                   <div className="mt-6 grid gap-3 text-sm text-[#243044] sm:grid-cols-2">
                     <span className="flex items-center gap-3">
                       <Mail size={18} />
-                      {profile?.email ?? "Nao informado"}
+                      {profile?.email ?? "Não informado"}
                     </span>
                     <span className="flex items-center gap-3">
                       <Phone size={18} />
-                      {profile?.telefone || "Telefone nao informado"}
+                      {profile?.telefone || "Telefone não informado"}
                     </span>
                     <span className="flex items-center gap-3">
                       <MapPin size={18} />
-                      {profile?.cidade || "Cidade nao informada"}
+                      {profile?.cidade || "Cidade não informada"}
                     </span>
                     <span className="flex items-center gap-3">
                       <Calendar size={18} />
@@ -157,8 +157,8 @@ export default function PerfilPage() {
                 <div className="flex items-center gap-5 rounded-2xl border border-[#dce4f4] bg-[#f8fbff] p-5">
                   <ShieldCheck size={64} className="text-green-700" />
                   <div>
-                    <p className="text-sm text-gray-600">Nivel Atual</p>
-                    <h3 className="text-3xl font-semibold text-green-700">Basico</h3>
+                    <p className="text-sm text-gray-600">Nível Atual</p>
+                    <h3 className="text-3xl font-semibold text-green-700">Básico</h3>
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function PerfilPage() {
 
             <form className="rounded-3xl bg-white p-8 shadow" onSubmit={handleSubmit}>
               <h2 className="mb-6 text-2xl font-semibold text-[#152E88]">
-                Informacoes pessoais
+                Informações pessoais
               </h2>
 
               <div className="grid gap-5 md:grid-cols-2">
@@ -258,7 +258,7 @@ export default function PerfilPage() {
                 disabled={isSaving}
                 className="mt-8 rounded-2xl bg-[#152E88] px-6 py-4 font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSaving ? "Salvando..." : "Salvar informacoes"}
+                {isSaving ? "Salvando..." : "Salvar informações"}
               </button>
             </form>
           </div>
@@ -288,7 +288,7 @@ export default function PerfilPage() {
 
 function formatDateTime(value?: string | null) {
   if (!value) {
-    return "Nao informado";
+    return "Não informado";
   }
 
   return new Intl.DateTimeFormat("pt-BR", {

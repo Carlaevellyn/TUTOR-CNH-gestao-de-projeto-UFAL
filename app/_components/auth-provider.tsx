@@ -25,6 +25,7 @@ type AuthContextValue = {
   }) => Promise<void>;
   atualizarUsuario: (usuario: Usuario) => void;
   logout: () => void;
+  isLoggingOut: boolean;
 };
 
 const TOKEN_KEY = "tutor-cnh-token";
@@ -47,6 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
   const [usuario, setUsuario] = useState<Usuario | null>(null);
   const [isReady, setIsReady] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -111,6 +113,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     async (payload: { email: string; senha: string }) => {
       const session = await api.login(payload);
       persistSession(session);
+      setIsLoggingOut(false);
       setToken(session.token);
       setUsuario(session.usuario);
       router.push("/dashboard/inicio");
@@ -128,6 +131,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }) => {
       const session = await api.cadastro(payload);
       persistSession(session);
+      setIsLoggingOut(false);
       setToken(session.token);
       setUsuario(session.usuario);
       router.push("/dashboard/inicio");
@@ -141,11 +145,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const logout = useCallback(() => {
+    setIsLoggingOut(true);
     clearSession();
     setToken(null);
     setUsuario(null);
-    router.push("/auth/login");
-  }, [router]);
+    window.location.replace("/");
+  }, []);
 
   return (
     <AuthContext.Provider
@@ -157,6 +162,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         cadastro,
         atualizarUsuario,
         logout,
+        isLoggingOut,
       }}
     >
       {children}

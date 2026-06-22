@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import {
   BellIcon,
@@ -13,32 +12,8 @@ import {
   TriangleAlert,
 } from "lucide-react";
 import { SidebarToggleButton } from "../../_components/sidebar-toggle-button";
+import { UserPill } from "../../_components/user-pill";
 
-
-function Toggle({
-  enabled,
-  onToggle,
-}: {
-  enabled: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <button
-      onClick={onToggle}
-      className={`relative h-6 w-11 rounded-full transition-all ${
-        enabled
-          ? "bg-[#2A67D7]"
-          : "bg-[#D6DBE8]"
-      }`}
-    >
-      <span
-        className={`absolute top-1 h-4 w-4 rounded-full bg-white transition-all ${
-          enabled ? "right-1" : "left-1"
-        }`}
-      />
-    </button>
-  );
-}
 export default function ConfiguracoesPage() {
 
   const [rememberProgress, setRememberProgress] = useState(true);
@@ -47,9 +22,9 @@ export default function ConfiguracoesPage() {
   const [confirmExit, setConfirmExit] = useState(true);
 
   return (
-    <section className="flex min-h-screen flex-1 flex-col overflow-auto bg-[#F7F8FC] px-6 py-6 lg:px-8">
+    <section className="flex min-h-full flex-1 flex-col bg-[#F7F8FC] px-6 py-6 lg:px-8">
       {/* Header */}
-      <header className="flex items-start justify-between">
+      <header className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div className="flex items-start gap-4">
           <SidebarToggleButton />
 
@@ -68,15 +43,7 @@ export default function ConfiguracoesPage() {
           <button className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-text-muted shadow-sm">
             <BellIcon />
           </button>
-          <Link href="/dashboard/perfil" className="flex items-center gap-3 self-start rounded-xl bg-white px-4 py-2 border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.02)] hover:bg-gray-50 transition">
-            <div className="text-right">
-              <p className="text-sm font-semibold text-[#222222]">Josue Medino</p>
-              <p className="text-xs text-text-muted">Nivel Basico</p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-slate-800 to-slate-500 text-sm font-black text-white">
-              JM
-            </div>
-          </Link>
+          <UserPill />
         </div>
       </header>
 

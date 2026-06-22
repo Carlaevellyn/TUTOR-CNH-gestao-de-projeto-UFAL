@@ -33,7 +33,7 @@ export default function LoginPage() {
     try {
       await login({ email, senha });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel entrar.");
+      setError(err instanceof Error ? err.message : "Não foi possível entrar.");
     } finally {
       setIsSubmitting(false);
     }
@@ -60,8 +60,8 @@ export default function LoginPage() {
               <span className="font-bold text-[#73B8F4]">aprovado!</span>
             </h2>
             <p className="mt-8 text-lg font-light leading-8 text-white">
-              Simulados atualizados, pratica por temas e tutor inteligente com IA
-              para te preparar para a prova teorica da CNH.
+              Simulados atualizados, prática por temas e tutor inteligente com IA
+              para te preparar para a prova teórica da CNH.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function LoginPage() {
               {
                 icon: ClipboardCheck,
                 title: "Simulados Realistas",
-                text: "Questoes atualizadas no padrao DETRAN.",
+                text: "Questões atualizadas no padrão DETRAN.",
               },
               {
                 icon: BookOpen,
@@ -80,7 +80,7 @@ export default function LoginPage() {
               {
                 icon: Bot,
                 title: "Tutor Inteligente com IA",
-                text: "Tire duvidas e receba explicacoes personalizadas.",
+                text: "Tire dúvidas e receba explicações personalizadas.",
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -117,7 +117,7 @@ export default function LoginPage() {
                 Bem-vindo de volta!
               </h2>
               <p className="mt-4 text-lg font-light text-gray-700">
-                Faca login para continuar seus estudos.
+                Faça login para continuar seus estudos.
               </p>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function LoginPage() {
           </form>
 
           <div className="mt-10 text-center text-lg">
-            <span className="text-gray-500">Ainda nao tem uma conta?</span>
+            <span className="text-gray-500">Ainda não tem uma conta?</span>
             <Link href="/auth/cadastro" className="ml-2 font-medium text-[#23248D]">
               Cadastre-se
             </Link>

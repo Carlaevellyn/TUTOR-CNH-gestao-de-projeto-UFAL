@@ -51,7 +51,7 @@ function buildCards(data: Desempenho | null): SummaryStatCardData[] {
       subtitle: "Corretas",
       details: [`${feitas} realizadas`, ""],
       icon: "gauge",
-      tooltipMessage: "Taxa geral de acertos nas questoes respondidas.",
+      tooltipMessage: "Taxa geral de acertos nas questões respondidas.",
     },
     {
       title: "Simulados",
@@ -104,7 +104,7 @@ export default function DesempenhoPage() {
       })
       .catch((err) => {
         if (mounted) {
-          setError(err instanceof Error ? err.message : "Nao foi possivel carregar o desempenho.");
+          setError(err instanceof Error ? err.message : "Não foi possível carregar o desempenho.");
         }
       })
       .finally(() => {
@@ -132,7 +132,7 @@ export default function DesempenhoPage() {
               Desempenho
             </h1>
             <p className="mt-1 text-sm font-bold text-gray-400">
-              Estatisticas registradas pelo backend conforme voce responde questoes.
+              Estatísticas registradas pelo backend conforme você responde questões.
             </p>
           </div>
         </div>

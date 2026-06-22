@@ -7,13 +7,13 @@ import { useAuth } from "./auth-provider";
 export function DashboardGuard({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  const { token, isReady } = useAuth();
+  const { token, isReady, isLoggingOut } = useAuth();
 
   useEffect(() => {
-    if (isReady && !token) {
+    if (isReady && !token && !isLoggingOut) {
       router.replace(`/auth/login?next=${encodeURIComponent(pathname)}`);
     }
-  }, [isReady, pathname, router, token]);
+  }, [isLoggingOut, isReady, pathname, router, token]);
 
   if (!isReady || !token) {
     return (
@@ -23,7 +23,7 @@ export function DashboardGuard({ children }: { children: ReactNode }) {
             Tutor CNH
           </p>
           <p className="mt-3 text-lg font-semibold text-[#16325c]">
-            Carregando sua sessao...
+            Carregando sua sessão...
           </p>
         </div>
       </div>

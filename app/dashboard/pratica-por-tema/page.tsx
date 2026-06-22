@@ -77,7 +77,7 @@ export default function PraticaPorTemaPage() {
       })
       .catch((err) => {
         if (mounted) {
-          setError(err instanceof Error ? err.message : "Nao foi possivel carregar os temas.");
+          setError(err instanceof Error ? err.message : "Não foi possível carregar os temas.");
         }
       })
       .finally(() => {
@@ -108,7 +108,7 @@ export default function PraticaPorTemaPage() {
       setTema(data.tema);
       setQuestoes(data.questoes);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel gerar a pratica.");
+      setError(err instanceof Error ? err.message : "Não foi possível gerar a prática.");
     } finally {
       setIsGenerating(false);
     }
@@ -126,7 +126,7 @@ export default function PraticaPorTemaPage() {
       const data = await api.responderQuestao(token, questaoId, alternativa);
       setRespostas((current) => ({ ...current, [questaoId]: data.resposta }));
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel registrar a resposta.");
+      setError(err instanceof Error ? err.message : "Não foi possível registrar a resposta.");
     } finally {
       setIsAnswering(false);
     }
@@ -143,7 +143,7 @@ export default function PraticaPorTemaPage() {
                 Praticar por Tema
               </h1>
               <p className="mt-1 text-sm text-[#5f6d84]">
-                Escolha um tema para gerar questoes pela API.
+                Escolha um tema para gerar questões pela API.
               </p>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function PraticaPorTemaPage() {
                       </h2>
                     </div>
                     <p className="text-center text-sm leading-6 text-[#6d7481]">
-                      Gere 5 questoes focadas neste tema e receba a correcao
+                      Gere 5 questões focadas neste tema e receba a correção
                       imediatamente.
                     </p>
                     <button
@@ -211,7 +211,7 @@ export default function PraticaPorTemaPage() {
             <div>
               <p className="text-xl font-extrabold text-blue-deep">Dica do Tutor Inteligente</p>
               <p className="mt-1 text-sm text-[#647389]">
-                Use esta tela para praticar um tema especifico e enviar suas duvidas
+                Use esta tela para praticar um tema específico e enviar suas dúvidas
                 para o tutor depois.
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function PraticaPorTemaPage() {
               {tema}
             </h1>
             <p className="mt-1 text-sm text-[#5f6d84]">
-              Questao {currentIndex + 1} de {questoes.length}
+              Questão {currentIndex + 1} de {questoes.length}
             </p>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function PraticaPorTemaPage() {
             ) : null}
             {currentResponse?.explicacao ? (
               <div className="mt-6 rounded-[16px] border border-[#cad6f6] bg-[#eef3ff] px-4 py-3 text-sm leading-6 text-[#34405a]">
-                <strong className="text-[#3457b9]">Explicacao: </strong>
+                <strong className="text-[#3457b9]">Explicação: </strong>
                 {currentResponse.explicacao}
               </div>
             ) : null}
@@ -310,7 +310,7 @@ export default function PraticaPorTemaPage() {
               disabled={currentIndex === questoes.length - 1}
               className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_18px_rgba(42,103,215,0.28)] transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              Proxima
+              Próxima
             </button>
           </div>
         </div>

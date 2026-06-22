@@ -8,7 +8,7 @@ export default function DashboardLayout({
   children: ReactNode;
 }) {
   return (
-    <main className="h-screen overflow-hidden">
+    <main className="h-dvh bg-[#fbfcff]">
       <DashboardGuard>
         <SidebarLayout>{children}</SidebarLayout>
       </DashboardGuard>

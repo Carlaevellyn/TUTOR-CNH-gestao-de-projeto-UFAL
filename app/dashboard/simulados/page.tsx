@@ -108,7 +108,7 @@ export default function SimuladosPage() {
       setSimulado(data.simulado);
       setQuestoes(data.questoes);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel iniciar o simulado.");
+      setError(err instanceof Error ? err.message : "Não foi possível iniciar o simulado.");
     } finally {
       setIsLoading(false);
     }
@@ -129,7 +129,7 @@ export default function SimuladosPage() {
       });
       setRespostas((current) => ({ ...current, [questaoId]: data.resposta }));
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel registrar a resposta.");
+      setError(err instanceof Error ? err.message : "Não foi possível registrar a resposta.");
     } finally {
       setIsAnswering(false);
     }
@@ -147,7 +147,7 @@ export default function SimuladosPage() {
       const data = await api.finalizarSimulado(token, simulado.id);
       setSimulado(data.simulado);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel finalizar o simulado.");
+      setError(err instanceof Error ? err.message : "Não foi possível finalizar o simulado.");
     } finally {
       setIsFinishing(false);
     }
@@ -175,7 +175,7 @@ export default function SimuladosPage() {
               Simulado oficial CNH
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-[#5f6d84]">
-              O backend vai gerar 30 questoes com IA, salvar o simulado no banco e
+              O backend vai gerar 30 questões com IA, salvar o simulado no banco e
               registrar suas respostas durante a prova.
             </p>
 
@@ -228,7 +228,7 @@ export default function SimuladosPage() {
       <div className="mt-5">
         <div className="flex items-center justify-between gap-4">
           <p className="text-sm text-[#5f6d84]">
-            Questao {currentIndex + 1} de {questoes.length}
+            Questão {currentIndex + 1} de {questoes.length}
           </p>
           {isFinished ? (
             <p className="text-sm font-bold text-success">
@@ -283,7 +283,7 @@ export default function SimuladosPage() {
               ) : null}
               {currentResponse?.explicacao ? (
                 <div className="mt-6 rounded-[16px] border border-[#cad6f6] bg-[#eef3ff] px-4 py-3 text-sm leading-6 text-[#34405a]">
-                  <strong className="text-[#3457b9]">Explicacao: </strong>
+                  <strong className="text-[#3457b9]">Explicação: </strong>
                   {currentResponse.explicacao}
                 </div>
               ) : null}
@@ -318,7 +318,7 @@ export default function SimuladosPage() {
               disabled={currentIndex === questoes.length - 1}
               className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_18px_rgba(42,103,215,0.28)] transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              Proxima questao
+              Próxima questão
             </button>
           </div>
         </article>
@@ -339,7 +339,7 @@ export default function SimuladosPage() {
           </article>
 
           <article className="flex flex-1 flex-col rounded-[20px] border border-border bg-white p-4 shadow-[0_12px_24px_rgba(19,32,58,0.08)]">
-            <h2 className="text-sm font-bold text-foreground">Navegacao</h2>
+            <h2 className="text-sm font-bold text-foreground">Navegação</h2>
             <div className="mt-4 grid flex-1 content-start grid-cols-5 gap-2">
               {questoes.map((questao, index) => (
                 <QuestionStatus

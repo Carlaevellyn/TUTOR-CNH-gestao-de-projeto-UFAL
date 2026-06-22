@@ -36,9 +36,9 @@ export function SidebarLayout({ children }: { children: ReactNode }) {
 
   return (
     <SidebarLayoutContext.Provider value={{ isExpanded, toggleSidebar }}>
-      <div className="flex min-h-screen w-full bg-surface">
+      <div className="flex h-full min-h-0 w-full bg-surface">
         <Sidebar />
-        <section className="flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto bg-[#fbfcff]">
+        <section className="flex h-full min-h-0 min-w-0 flex-1 flex-col overflow-y-auto bg-[#fbfcff]">
           {children}
         </section>
       </div>

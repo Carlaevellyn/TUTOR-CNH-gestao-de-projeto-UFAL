@@ -15,7 +15,7 @@
   --blue-deep: #2267ad;
   --indigo: #26379a;
   --purple: #8f08f6;
-  --white: #f4f4f4;
+  --white: #ffffff;
 
   /* Semantic aliases */
   --primary: #2a67d7;
@@ -72,19 +72,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f1728;
-    --foreground: #eef4ff;
-    --surface: #13203a;
-    --surface-muted: #1a2a4a;
-    --border: #2d3d60;
-    --text-muted: #a8b5cc;
-  }
-}
-
 html {
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 html,

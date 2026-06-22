@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     quote:
-      "Os simulados parecem a prova de verdade e a pratica por tema acelerou minha revisao nas materias em que eu travava.",
+      "Os simulados parecem a prova de verdade e a prática por tema acelerou minha revisão nas matérias em que eu travava.",
     author: "Mariana, Sao Paulo",
   },
   {
@@ -96,7 +96,7 @@ export default function LandingPage() {
                   Estude com o Tutor CNH quando e onde quiser.
                 </h1>
                 <p className="mx-auto mt-5 max-w-lg text-base leading-7 text-[#5f72a8] sm:text-lg lg:mx-0">
-                  Simulados realistas, revisao guiada e explicacoes claras para voce conquistar sua carteira com mais confianca.
+                  Simulados realistas, revisão guiada e explicações claras para você conquistar sua carteira com mais confiança.
                 </p>
                 <div className="mt-8 flex justify-center gap-4 lg:justify-start">
                   <Link
@@ -133,7 +133,7 @@ export default function LandingPage() {
                   <div>
                     <p className="font-semibold text-white">Mudou a lei?</p>
                     <p>
-                      O Tutor CNH se atualiza automaticamente para voce nao estudar conteudo defasado.
+                      O Tutor CNH se atualiza automaticamente para você não estudar conteúdo defasado.
                     </p>
                   </div>
                 </div>

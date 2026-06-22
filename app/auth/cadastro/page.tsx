@@ -37,7 +37,7 @@ export default function CadastroPage() {
         confirmarSenha,
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nao foi possivel criar a conta.");
+      setError(err instanceof Error ? err.message : "Não foi possível criar a conta.");
     } finally {
       setIsSubmitting(false);
     }
@@ -60,8 +60,8 @@ export default function CadastroPage() {
         </h1>
 
         <p className="mt-8 text-xl font-light">
-          Simulados atualizados, pratica por temas e tutor inteligente com IA para te
-          preparar para a prova teorica da CNH.
+          Simulados atualizados, prática por temas e tutor inteligente com IA para te
+          preparar para a prova teórica da CNH.
         </p>
 
         <div className="mt-12 space-y-8">
@@ -69,7 +69,7 @@ export default function CadastroPage() {
             {
               icon: ClipboardCheck,
               title: "Simulados Realistas",
-              text: "Questoes atualizadas no padrao DETRAN.",
+              text: "Questões atualizadas no padrão DETRAN.",
             },
             {
               icon: BookOpen,
@@ -79,7 +79,7 @@ export default function CadastroPage() {
             {
               icon: Bot,
               title: "Tutor Inteligente com IA",
-              text: "Tire duvidas e receba explicacoes personalizadas.",
+              text: "Tire dúvidas e receba explicações personalizadas.",
             },
           ].map((item) => {
             const Icon = item.icon;
@@ -228,7 +228,7 @@ export default function CadastroPage() {
           </form>
 
           <p className="mt-8 text-center text-[#6A7487]">
-            Ja tem uma conta?{" "}
+            Já tem uma conta?{" "}
             <Link href="/auth/login" className="font-semibold text-[#152E88] hover:underline">
               Fazer login
             </Link>

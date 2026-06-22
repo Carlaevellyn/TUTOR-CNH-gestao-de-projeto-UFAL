@@ -128,14 +128,14 @@ function CogIcon({ className }: IconProps) {
 }
 
 const menuItems = [
-  { label: "Inicio", href: "/dashboard/inicio", icon: HomeIcon },
+  { label: "Início", href: "/dashboard/inicio", icon: HomeIcon },
   { label: "Simulados", href: "/dashboard/simulados", icon: ClipboardIcon },
-  { label: "Pratica por Tema", href: "/dashboard/pratica-por-tema", icon: BookIcon },
+  { label: "Prática por Tema", href: "/dashboard/pratica-por-tema", icon: BookIcon },
   { label: "Revisar Erros", href: "/dashboard/revisar-erros", icon: AlertIcon },
   { label: "Desempenho", href: "/dashboard/desempenho", icon: MedalIcon },
   { label: "Tutor Inteligente", href: "/dashboard/tutor-inteligente", icon: BotIcon },
   { label: "Perfil", href: "/dashboard/perfil", icon: UserIcon },
-  { label: "Configuracoes", href: "/dashboard/configuracoes", icon: CogIcon },
+  { label: "Configurações", href: "/dashboard/configuracoes", icon: CogIcon },
 ] as const;
 
 function SidebarLogo() {
@@ -168,7 +168,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-screen shrink-0 flex-col justify-between overflow-hidden bg-secondary py-5 text-white transition-[width,padding] duration-300 ${
+      className={`flex h-full min-h-0 shrink-0 flex-col justify-between overflow-y-auto overflow-x-hidden bg-secondary py-5 text-white transition-[width,padding] duration-300 ${
         isExpanded ? "w-[240px] px-5 lg:py-7" : "w-[78px] px-2 lg:py-5"
       }`}
     >

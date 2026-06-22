@@ -21,8 +21,8 @@ const quickActions = [
     icon: ClipboardCheck,
   },
   {
-    title: "Pratica por Tema",
-    description: "Estude assuntos especificos e teste seus pontos fortes.",
+    title: "Prática por Tema",
+    description: "Estude assuntos específicos e teste seus pontos fortes.",
     cta: "Estudar",
     href: "/dashboard/pratica-por-tema",
     accent: "#22c55e",
@@ -30,7 +30,7 @@ const quickActions = [
   },
   {
     title: "Revisar Erros",
-    description: "Revise as questoes que voce errou e avance com clareza.",
+    description: "Revise as questões que você errou e avance com clareza.",
     cta: "Revisar",
     href: "/dashboard/revisar-erros",
     accent: "#991b1b",
@@ -38,7 +38,7 @@ const quickActions = [
   },
   {
     title: "Tutor Inteligente",
-    description: "Tire duvidas e receba explicacoes com IA CNH.",
+    description: "Tire dúvidas e receba explicações com IA CNH.",
     cta: "Conversar",
     href: "/dashboard/tutor-inteligente",
     accent: "#eab308",
@@ -49,7 +49,7 @@ const quickActions = [
 function cardsFromData(data: Desempenho | null): SummaryStatCardData[] {
   return [
     {
-      title: "Questoes",
+      title: "Questões",
       accent: "#22c55e",
       value: `${Math.round(data?.percentual_acerto ?? 0)}%`,
       subtitle: "Corretas",
@@ -127,7 +127,7 @@ export default function HomePage() {
       })
       .catch((err) => {
         if (mounted) {
-          setError(err instanceof Error ? err.message : "Nao foi possivel carregar o dashboard.");
+          setError(err instanceof Error ? err.message : "Não foi possível carregar o dashboard.");
         }
       })
       .finally(() => {
@@ -148,10 +148,10 @@ export default function HomePage() {
           <SidebarToggleButton />
           <div>
             <h1 className="text-3xl font-black tracking-tight text-[#0b57a4] sm:text-4xl">
-              Ola, {usuario?.nome?.split(" ")[0] ?? "aluno"}!
+              Olá, {usuario?.nome?.split(" ")[0] ?? "aluno"}!
             </h1>
             <p className="mt-1 text-sm font-bold text-gray-400">
-              Seus dados abaixo sao carregados diretamente da API CNH.
+              Seus dados abaixo são carregados diretamente da API CNH.
             </p>
           </div>
         </div>
